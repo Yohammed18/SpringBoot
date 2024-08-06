@@ -1,6 +1,8 @@
 package net.example.blog.run;
 
 import jakarta.annotation.PostConstruct;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
@@ -12,20 +14,8 @@ import java.util.Optional;
 @Repository
 public class RunRepository{
 
+    private static final Logger log = LoggerFactory.getLogger((RunRepository.class));
     private List<Run> runs = new ArrayList<>();
-
-    public List<Run> findAll() {
-        return runs;
-    }
-
-
-    Optional<Run> getRunById(Integer id){
-
-        return runs.stream()
-                .filter(run -> run.id() == id)
-                .findFirst();
-    }
-
     @PostConstruct
     private void init() {
         runs.add(new Run(1,
@@ -80,7 +70,35 @@ public class RunRepository{
                 6, Location.INDOOR));
     }
 
+    // returns all the runs
+    List<Run> findAll() {
+        return runs;
+    }
 
+    //return run by id
+    Optional<Run> findById(Integer id){
+        return runs.stream()
+                .filter(run -> run.id() == id)
+                .findFirst();
+    }
 
+    //create a new run and adds it to the list of runs
+    void create(Run run){
+        runs.add(run);
+    }
 
+    //delete run by id
+    void removeById(Integer id){
+//        Optional<Run> removeRun = findById(id);
+//        runs.remove(removeRun.get());
+        runs.removeIf(run -> run.id() == id);
+    }
+
+    //Update run
+    void UpdateById(Run run, Integer id){
+        Optional<Run> existingRun = findById(id);
+        if(existingRun.isPresent()){
+            runs.set(runs.indexOf(existingRun.get()),run);
+        }
+    }
 }
