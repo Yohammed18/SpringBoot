@@ -1,5 +1,5 @@
 package net.example.blog.run;
-import jakarta.validation.Valid;
+import net.example.blog.run.Impl.RunRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -36,19 +36,24 @@ public class RunController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/create")
     void create(@RequestBody Run run){
-        runRepository.create(run);
+        runRepository.save(run);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/update/{id}")
     void update(@RequestBody Run run, @PathVariable Integer id){
-        runRepository.update(run, id);
+        runRepository.save(run);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/delete/{id}")
     void delete(@PathVariable Integer id){
-        runRepository.delete(id);
+        runRepository.deleteById(id);
+    }
+
+    @GetMapping("/location/{location}")
+    List<Run> findAllByLocation(@PathVariable String location){
+        return runRepository.findAllByLocation(location.toUpperCase());
     }
 
 

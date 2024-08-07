@@ -11,12 +11,12 @@ import java.util.Optional;
 
 
 @Repository
-public class RunRepository{
+public class JdbcClientRunRepository {
 
-    private static final Logger log = LoggerFactory.getLogger((RunRepository.class));
+    private static final Logger log = LoggerFactory.getLogger((JdbcClientRunRepository.class));
     private final JdbcClient jdbcClient;
 
-    public RunRepository(JdbcClient jdbcClient){
+    public JdbcClientRunRepository(JdbcClient jdbcClient){
         this.jdbcClient = jdbcClient;
     }
 
@@ -63,7 +63,7 @@ public class RunRepository{
         runs.stream().forEach(this::create);
     }
 
-    public int count(){return jdbcClient.sql("Select * from run").query().listOfRows().size(); }
+    public int count(){ return jdbcClient.sql("Select * from run").query().listOfRows().size(); }
 
     public List<Run> findByLocation(String location){
         return jdbcClient.sql("select * from run where location = :location")
