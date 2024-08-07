@@ -16,14 +16,16 @@ Content-Type: application/json
 }
 
 ### Get Request
-GET http://localhost:8080/api/runs/1
+GET http://localhost:8080/api/runs/11
 Content-Type: application/json
 
 ### Get Request Find Id that does not exist
 GET http://localhost:8080/api/runs/99
 Content-Type: application/json
 
-
+### Delete Request Delete run based on id
+DELETE  http://localhost:8080/api/runs/delete/11
+Content-Type: application/json
 
 
 
