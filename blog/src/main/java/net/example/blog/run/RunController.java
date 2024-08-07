@@ -1,4 +1,5 @@
 package net.example.blog.run;
+import net.example.blog.run.Impl.RunRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -18,44 +19,41 @@ public class RunController {
         this.runRepository = runRepository;
     }
 
-//    @GetMapping("/hello")
-//    String home(){
-//        return "Hello, Runner";
-//    }
-
-    //CRUD REST API
-    //create a method that returns all the runs
     @GetMapping("")
     List<Run> findAll(){
         return runRepository.findAll();
     }
 
-
-    //create a method that return a run based on id
     @GetMapping("/{id}")
-    Run findById(@PathVariable Integer id){
-
-        Optional<Run> run =  runRepository.findById(id);
+    Optional<Run> findById(@PathVariable Integer id){
+        Optional run = runRepository.findById(id);
         if(run.isEmpty()){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
-        return run.get();
+        return run;
     }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/create")
-    void createRun(@RequestBody Run run){
-        runRepository.create(run);
+    void create(@RequestBody Run run){
+        runRepository.save(run);
     }
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping("/delete/{id}")
-    void deleteById(@PathVariable Integer id){
-        runRepository.removeById(id);
-    }
+
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/update/{id}")
     void update(@RequestBody Run run, @PathVariable Integer id){
-        runRepository.UpdateById(run,id);
+        runRepository.save(run);
+    }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/delete/{id}")
+    void delete(@PathVariable Integer id){
+        runRepository.deleteById(id);
+    }
+
+    @GetMapping("/location/{location}")
+    List<Run> findAllByLocation(@PathVariable String location){
+        return runRepository.findAllByLocation(location.toUpperCase());
     }
 
 
