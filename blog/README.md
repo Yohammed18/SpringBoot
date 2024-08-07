@@ -2,7 +2,7 @@
 
 This project demonstrates how to build a RESTful API using Spring Boot with three different data storage solutions. Each branch in this repository showcases CRUD (Create, Read, Update, Delete) operations using various storage methods:
 
-1. **In-Memory Storage** (`main` branch)
+1. **In-Memory Storage** (`in-memory` branch)
 2. **Embedded H2 Database** (`h2-branch`)
 3. **PostgreSQL Database** (`postgres-branch`)
 
@@ -39,7 +39,7 @@ This project demonstrates how to build a RESTful API using Spring Boot with thre
 
 ## Key Steps for Each Branch
 
-1. **In-Memory Storage (`main` branch):**
+1. **In-Memory Storage (`in-memory` branch):**
     - **Define Entity Classes:** Create POJOs for data representation.
     - **Create Repository:** Use an in-memory data structure for CRUD operations.
     - **Build Controller:** Expose RESTful endpoints for CRUD operations.
