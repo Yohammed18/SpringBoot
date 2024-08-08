@@ -1,5 +1,15 @@
 .vscode
-blog/mvnw
-blog/mvnw.cmd
-blog/src/main/resources
-blog/.mvn/
+run-user/mvnw
+run-user/mvnw.cmd
+run-user/src/main/resources
+run-user/.mvn/
+run-user/.idea
+
+# posts project
+posts/mvnw
+posts/mvnw.cmd
+posts/src/main/resources
+posts/.mvn/
+posts/.idea
+
+.idea
