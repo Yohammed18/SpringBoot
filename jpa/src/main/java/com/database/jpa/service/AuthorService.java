@@ -38,7 +38,7 @@ public class AuthorService {
         repository.deleteById(id);
     }
 
-//    public List<Author> getAuthorsByName(String name){
-//        return repository.getAuthorByName(name);
-//    }
+    public List<Author> getAuthorsByName(String name){
+        return repository.getAuthorByName(name);
+    }
 }

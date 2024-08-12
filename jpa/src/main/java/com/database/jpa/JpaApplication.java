@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootApplication
 @Slf4j
@@ -36,17 +37,17 @@ public class JpaApplication {
 	@Bean
 	CommandLineRunner runner(){
 		return args -> {
-//			//Create author
-//			Author author = Author.builder()
-//					.id(1L)
-//					.name("Mohammed Basimal")
-//					.age(32)
-//					.build();
-//
-//			authorService.create(author);
-//			Optional<Author> findAuthor = authorService.finById(1L);
-//
-//			System.out.println(findAuthor.toString());
+			//Create author
+			Author author = Author.builder()
+					.id(1L)
+					.name("Mohammed Basimal")
+					.age(32)
+					.build();
+
+			authorService.create(author);
+			Optional<Author> findAuthor = authorService.finById(1L);
+
+			System.out.println(findAuthor.toString());
 
 			//import list of authors from author.json
 			try(InputStream stream = TypeReference.
@@ -59,11 +60,11 @@ public class JpaApplication {
 				System.err.println("ERROR: Unable to read JSON File");
 			}
 
-//			System.out.println("TEST");
-//			System.out.println("Retrieve an author by name");
-//			List<Author> author = authorService.getAuthorsByName("George Orwell");
+			System.out.println("TEST");
+			System.out.println("Retrieve an author by name");
+			List<Author> authorGeorge = authorService.getAuthorsByName("George Orwell");
 
-//			System.out.println(author.toString());
+			System.out.println(authorGeorge.toString());
 		};
 	}
 }
