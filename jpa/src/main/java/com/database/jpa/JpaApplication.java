@@ -19,52 +19,7 @@ import java.util.Optional;
 @Slf4j
 public class JpaApplication {
 
-	private final AuthorService authorService;
-	private final ObjectMapper objectMapper;
-
-
-	public JpaApplication(AuthorService authorService, ObjectMapper objectMapper) {
-
-		this.authorService = authorService;
-		this.objectMapper = objectMapper;
-	}
-
 	public static void main(String[] args) {
 		SpringApplication.run(JpaApplication.class, args);
-	}
-
-
-	@Bean
-	CommandLineRunner runner(){
-		return args -> {
-			//Create author
-			Author author = Author.builder()
-					.id(1L)
-					.name("Mohammed Basimal")
-					.age(32)
-					.build();
-
-			authorService.create(author);
-			Optional<Author> findAuthor = authorService.finById(1L);
-
-			System.out.println(findAuthor.toString());
-
-			//import list of authors from author.json
-			try(InputStream stream = TypeReference.
-					class.getResourceAsStream("/data/author.json")){
-				List<Author> authors = objectMapper
-						.readValue(stream, new TypeReference<List<Author>>() {});
-
-				authorService.saveAll(authors);
-			}catch (IOException e){
-				System.err.println("ERROR: Unable to read JSON File");
-			}
-
-			System.out.println("TEST");
-			System.out.println("Retrieve an author by name");
-			List<Author> authorGeorge = authorService.getAuthorsByName("George Orwell");
-
-			System.out.println(authorGeorge.toString());
-		};
 	}
 }
