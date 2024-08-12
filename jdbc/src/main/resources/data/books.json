@@ -1,0 +1,17 @@
+[
+  {
+    "isbn": "978-0451524935",
+    "title": "1984",
+    "author_id": 1
+  },
+  {
+    "isbn": "978-0141439518",
+    "title": "Pride and Prejudice",
+    "author_id": 2
+  },
+  {
+    "isbn": "978-0486280615",
+    "title": "The Adventures of Tom Sawyer",
+    "author_id": 3
+  }
+]
