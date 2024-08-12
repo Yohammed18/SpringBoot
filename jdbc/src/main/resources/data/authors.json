@@ -1,17 +1,12 @@
 [
-  {
-    "id": 1,
-    "name": "George Orwell",
-    "age": 46
-  },
-  {
-    "id": 2,
-    "name": "Jane Austen",
-    "age": 41
-  },
-  {
-    "id": 3,
-    "name": "Mark Twain",
-    "age": 74
-  }
+  { "id": 1, "name": "George Orwell", "age": 46 },
+  { "id": 2, "name": "Jane Austen", "age": 41 },
+  { "id": 3, "name": "Mark Twain", "age": 74 },
+  { "id": 4, "name": "J.K. Rowling", "age": 58 },
+  { "id": 5, "name": "J.R.R. Tolkien", "age": 81 },
+  { "id": 6, "name": "Agatha Christie", "age": 85 },
+  { "id": 7, "name": "Ernest Hemingway", "age": 61 },
+  { "id": 8, "name": "F. Scott Fitzgerald", "age": 44 },
+  { "id": 9, "name": "Leo Tolstoy", "age": 82 },
+  { "id": 10, "name": "Charles Dickens", "age": 58 }
 ]

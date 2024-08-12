@@ -8,4 +8,7 @@ public interface AuthorDao {
 
     void create(Author author);
     List<Author> findAllAuthors();
+    void saveAll(List<Author> authors);
+
+    Author findAuthorById(Integer id);
 }

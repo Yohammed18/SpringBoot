@@ -10,4 +10,9 @@ public interface BookDao {
 
 
     List<Book> findAllBooks();
+
+    void saveAll(List<Book> books);
+    Book findById(String isbn);
+
+    Book findBookByAuthorId(Long id);
 }
