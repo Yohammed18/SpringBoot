@@ -13,3 +13,13 @@ posts/.mvn/
 posts/.idea
 
 .idea
+
+# jpa project
+jpa/mvnw
+jpa/mvnw.cmd
+jpa/src/main/resources
+jpa/.mvn/
+jpa/.idea
+
+# jdbc project
+jdbc/src/main/resources
