@@ -20,5 +20,6 @@ public class Book {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "author_id")
+    @JsonProperty("author_id")
     private Author author;
 }

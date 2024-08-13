@@ -37,7 +37,7 @@ public class AuthorController {
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteAuthorById(@PathVariable Long id){
         service.deleteById(id);
     }
