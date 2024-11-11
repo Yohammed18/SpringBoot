@@ -1,7 +1,9 @@
 package com.database.jpa.controller;
 
+import com.database.jpa.mappers.Mapper;
 import com.database.jpa.model.Author;
-import com.database.jpa.service.AuthorService;
+import com.database.jpa.model.Dto.AuthorDTO;
+import com.database.jpa.service.Impl.AuthorServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -11,12 +13,15 @@ import java.util.List;
 @RestController
 @Slf4j
 @RequestMapping("/api/authors")
+@CrossOrigin(origins = "http://localhost:3000")
 public class AuthorController {
 
-    private final AuthorService service;
+    private final AuthorServiceImpl service;
+    private final Mapper<Author, AuthorDTO> mapper;
 
-    public AuthorController(AuthorService service) {
+    public AuthorController(AuthorServiceImpl service, Mapper<Author, AuthorDTO> mapper) {
         this.service = service;
+        this.mapper = mapper;
     }
 
     @GetMapping("/")
@@ -26,8 +31,9 @@ public class AuthorController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/create")
-    void create(@RequestBody Author author){
-        service.create(author);
+    void create(@RequestBody AuthorDTO authorDTO){
+        Author author = mapper.mapFrom(authorDTO);
+        service.createAuthor(author);
     }
 
 

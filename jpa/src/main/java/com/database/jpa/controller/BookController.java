@@ -1,7 +1,7 @@
 package com.database.jpa.controller;
 
 import com.database.jpa.model.Book;
-import com.database.jpa.service.BookService;
+import com.database.jpa.service.Impl.BookServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,9 +14,9 @@ import java.util.List;
 @RequestMapping("api/books")
 public class BookController {
 
-    private final BookService bookService;
+    private final BookServiceImpl bookService;
 
-    public BookController(BookService bookService) {
+    public BookController(BookServiceImpl bookService) {
         this.bookService = bookService;
     }
 

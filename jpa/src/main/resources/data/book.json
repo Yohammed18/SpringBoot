@@ -1,12 +1,12 @@
 [
-  { "isbn": "978-0451524935", "title": "1984", "author_id": 1 },
-  { "isbn": "978-0141439518", "title": "Pride and Prejudice", "author_id": 2 },
-  { "isbn": "978-0486280615", "title": "The Adventures of Tom Sawyer", "author_id": 3 },
-  { "isbn": "978-0439139601", "title": "Harry Potter and the Goblet of Fire", "author_id": 4 },
-  { "isbn": "978-0261102385", "title": "The Fellowship of the Ring", "author_id": 5 },
-  { "isbn": "978-0062073488", "title": "And Then There Were None", "author_id": 6 },
-  { "isbn": "978-0684801223", "title": "The Old Man and the Sea", "author_id": 7 },
-  { "isbn": "978-0743273565", "title": "The Great Gatsby", "author_id": 8 },
-  { "isbn": "978-0140449174", "title": "War and Peace", "author_id": 9 },
-  { "isbn": "978-0486282086", "title": "A Tale of Two Cities", "author_id": 10 }
+    { "isbn": "978-0451524935", "title": "1984", "authorId": 1 },
+    { "isbn": "978-0141439518", "title": "Pride and Prejudice", "authorId": 2 },
+    { "isbn": "978-0486280615", "title": "The Adventures of Tom Sawyer", "authorId": 3 },
+    { "isbn": "978-0747532743", "title": "Harry Potter and the Philosopher's Stone", "authorId": 4 },
+    { "isbn": "978-1501132970", "title": "The Shining", "authorId": 5 },
+    { "isbn": "978-0743297332", "title": "The Great Gatsby", "authorId": 7 },
+    { "isbn": "978-0142437247", "title": "Moby Dick", "authorId": 8 },
+    { "isbn": "978-0345339683", "title": "The Hobbit", "authorId": 9 },
+    { "isbn": "978-0062073488", "title": "And Then There Were None", "authorId": 10 },
+    { "isbn": "978-1594634024", "title": "The Goldfinch", "authorId": 6 }
 ]
